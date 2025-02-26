@@ -1,3 +1,29 @@
+
+<?php
+    
+    
+
+
+    
+    if(isset($_POST['submit'])){
+
+        include 'conexao.php';
+        $Nome = $_POST['nome'];
+        $Email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $genero = $_POST['genero'];
+        $cidade = $_POST['cidade'];
+        $Estado = $_POST['estado'];
+        $endereco = $_POST['endereco'];
+        $data = $_POST['data_nascimento'];
+
+        $Query = "Insert into pessoa(nome,email,telefone,genero,cidade,estado,endereco,data_nascimento)
+                            values ('$Nome','$Email','$telefone','$genero','$cidade','$Estado','$endereco','$data')";
+        pg_query($conexao, $Query);
+        echo "cadastrado com sucesso";
+    }
+    
+    ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,10 +31,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
     <link rel="stylesheet" href="formulario.css">
+
+   
+
+
 </head>
 <body> 
     <div class="box">
-    <form action="">
+    <form action="formulario.php" method="POST">
         <fieldset>
             <legend><b>Fórmulário de Clientes</b></legend>
             <br>

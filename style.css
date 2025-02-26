@@ -21,7 +21,7 @@ input{
     font-size: 15px;
 }
 
-button{
+.button{
     background-color: gray;
     border: none;
     outline: none;
@@ -32,6 +32,6 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+.button:hover{
     background-color: white;
 }
